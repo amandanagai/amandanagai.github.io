@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Memoir</title>
+
+
+  <style type='text/css'>
+
+  html {
+      box-sizing: border-box
+  }
+
+  *,
+  *:before,
+  *:after {
+      box-sizing: inherit
+  }
+
+  html {
+      font-family: sans-serif;
+      line-height: 1.15;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%
+  }
+
+  body {
+      margin: 0
+  }
+
+
+
+  body {
+      color: #323232;
+      font-size: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 27px;
+      background-color: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+  }
+
+  *::selection {
+      color: #fff;
+      background-color: #0074D5
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+      line-height: initial;
+      font-weight: inherit
+  }
+
+  h1 {
+      font-size: 36px
+  }
+
+  h2 {
+      font-size: 28px
+  }
+
+  h3 {
+      font-size: 24px
+  }
+
+  h4 {
+      font-size: 20px
+  }
+
+  h5 {
+      font-size: 18px
+  }
+
+  h6 {
+      font-size: 16px
+  }
+
+  a {
+      text-decoration: none;
+      color: #d40c3c;
+      transition: .4s
+  }
+
+  a:hover,
+  a:active,
+  a:focus {
+      text-decoration: underline
+  }
+
+  img {
+      display: block;
+      max-width: 100%;
+      font-style: italic
+  }
+
+  figure img {
+      margin: 0 auto
+  }
+
+  figcaption {
+      text-align: center;
+      font-size: 12px
+  }
+
+  figcaption p {
+      font-size: 12px
+  }
+
+  pre,
+  code {
+      font-family: Courier, monospace;
+      background-color: #F9FAFB
+  }
+
+  pre {
+      overflow: auto;
+      padding: 32px;
+      font-size: 14px;
+      line-height: 22px;
+      white-space: pre-wrap;
+      word-wrap: break-word
+  }
+
+  li code,
+  p code {
+      padding: 4px 8px
+  }
+
+  strong {
+      font-weight: 700
+  }
+
+  blockquote {
+      padding-left: 16px;
+      border-left: 3px solid #323232;
+      font-style: italic
+  }
+
+  .o-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      padding-right: 16px;
+      padding-left: 16px
+  }
+
+  .o-grid:after {
+      content: "";
+      display: table;
+      clear: both
+  }
+
+
+
+
+  </style>
+
+</head>
+
+<body class=''>
+<div class="o-grid">
+
+<h1 id="etoileisapremiumbloggingjekylltheme">Etoile is a premium blogging Jekyll theme</h1>
+
+<p>Etoile was developed by <a href="https://pressapps.co">PressApps</a>, theme <a href="https://etoile.jekyll.plus/">live demo</a> available.</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+<li>Live Search</li>
+
+<li>Image lightbox</li>
+
+<li>Contact form (FormSpree)</li>
+
+<li>Image lightbox and slider</li>
+
+<li>Disqus comments for posts</li>
+
+<li>Configurable home page</li>
+
+<li>Optimised for <a href="https://pages.github.com/">GitHub</a> pages</li>
+
+<li>RSS feed</li>
+
+<li>SEO tags</li>
+
+<li>Google Analytics</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<p>Install the dependencies with <a href="http://bundler.io/">Bundler</a>:</p>
+
+<pre><code class="bash language-bash">bundle install
+</code></pre>
+
+<p>Run the following to generate your site:</p>
+
+<pre><code class="bash language-bash">bundle exec jekyll serve
+</code></pre>
+
+<p>You can find more on <a href="https://jekyllrb.com/docs/deployment-methods/">Deployment Methods</a> page on Jekyll website.</p>
+
+<h2 id="setup">Setup</h2>
+
+<h3 id="siteandauthordetails">Site and author details</h3>
+
+<p>Add your site and author details in <code>_config.yml</code>:</p>
+
+<pre><code class="yaml language-yaml"># Site settings
+title:              Étoile
+description:        Magazine Jekyll theme for writers and bloggers.
+url:                # Site base hostname &amp; protocol, e.g. http://example.com
+baseurl:            "" # Site subpath, e.g. /blog
+logo_image:
+    dark:             # Dark logo e.g logo-dark.svg upload to /uploads/ folder, used in header, mobile navigation and page sidebar About widget
+    light:            # Light logo e.g. logo-light.svg upload to /uploads/ folder, used in footer About widget
+permalink:          /:title/ # Permalink URLs structure, for permalink style options see: https://jekyllrb.com/docs/permalinks/
+date_format:        "%B %-d, %Y" # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+uploads:            /uploads/ # Path to post content assets directory i.e post images, pdfs etc
+paginate:           7 # Number of posts displayed on blog page
+paginate_path:      "/blog/:num/" # Blog path
+google_analytics:   # Google analytics code, get your code here https://www.google.com/analytics/
+disqus:
+    shortname:        # Disqus comments shortname, requires Disqus account https://disqus.com/
+
+instagram_accesstoken: # Generate token here: http://instagram.pixelunion.net/
+
+footer:             # Default footer image settings
+    copyright:        Made by a &lt;a href="https://ivanchromjak.com/"&gt;human&lt;/a&gt; somewhere on the planet earth.
+</code></pre>
+
+<h3 id="navigationbar">Navigation Bar</h3>
+
+<p>Set in the main navigation links in <code>_data/navbar_primary.yml</code>:</p>
+
+<pre><code class="yaml language-yaml">- title: About
+    url: /about/
+</code></pre>
+
+<h3 id="widgets">Widgets</h3>
+
+<p>Set in the page sidebar and footer sidebar widgets in <code>_data/sidebars.yml</code>. Chose from the following widgets: <code>categories</code>, <code>recent</code>, <code>authors</code>, <code>about</code>, links. Edit copyright notice in about widget in <code>_config.yml</code>:</p>
+
+<pre><code class="yaml language-yaml">footer:
+    copyright:
+</code></pre>
+
+<h3 id="enablingcommentsviadisqus">Enabling comments (via Disqus)</h3>
+
+<p>Optionally, if you have a Disqus account, you can tell Jekyll to use it to show a comments section below each post. To enable it, add the following lines to your Jekyll site:</p>
+
+<pre><code class="yaml language-yaml">disqus:
+    shortname: my_disqus_shortname
+</code></pre>
+
+<p>You can find out more about Disqus' shortnames <a href="https://help.disqus.com/customer/portal/articles/466208">here</a>.</p>
+
+<p>Comments are enabled by default and will only appear in production, i.e., <code>JEKYLL_ENV=production</code>. If you don't want to display comments for a particular post you can disable them by adding <code>comments: false</code> to that post's YAML Front Matter.</p>
+
+<h3 id="googleanalytics">Google Analytics</h3>
+
+<p>To enable Google Anaytics, add the following lines to your Jekyll site:</p>
+
+<pre><code class="yaml language-yaml">  google_analytics: UA-NNNNNNNN-N
+</code></pre>
+
+<p>Google Analytics will only appear in production, i.e., <code>JEKYLL_ENV=production</code></p>
+
+<h3 id="contactformviaformspree">Contact Form (via FormSpree)</h3>
+
+<p>Submit the form and confirm your email address at <a href="https://formspree.io/">FormSpree</a>. Then add the following code to page content:</p>
+
+<pre><code>{% include formspree.html email="my_name@gmail.com" redirect="/thanks/" %}
+</code></pre>
+
+<h3 id="updatefavicon">Update favicon</h3>
+
+<p>You can find the current favicon (favicon.png) inside the theme <code>/uploads/</code> directory, just replace it with your new favicon.</p>
+
+<h2 id="posts">Posts</h2>
+
+<p>To create a new post, you can create a new markdown file inside the <code>_posts</code> directory by following the recommended file naming format:</p>
+
+<pre><code>YEAR-MONTH-DAY-title.MARKUP
+</code></pre>
+
+<p>Where <code>YEAR</code> is a four-digit number, <code>MONTH</code> and <code>DAY</code> are both two-digit numbers, and <code>MARKUP</code> is the file extension representing the format used in the file. For example, the following are examples of valid post filenames:</p>
+
+<pre><code>2011-12-31-new-years-eve-is-awesome.md
+2012-09-12-how-to-write-a-blog.md
+</code></pre>
+
+<p>Post requires front matter, everything in between the first and second --- are part of the YAML Front Matter, and everything after the second --- will be rendered with Markdown and show up as “Content”.
+The following is a post file with different configurations you can add as example:</p>
+
+<pre><code class="yaml language-yaml">---
+title: Best tech companies to work for in 2019
+image: post-image.jpg       # Upload the image to uploads directory
+categories: [business]      # Same as category post tag
+tag: [spotlight, featured]  # Optional: spotlight tag adds post to spotlight section, featured tag add post to featured section
+hidden: true                # Optional: exlude the post from blog page posts
+author: sarah               # Reference author username
+---
+</code></pre>
+
+<p>You can rebuild the site in many different ways, but the most common way is to run <code>bundle exec jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+
+<p>To keep things more organized you can organize post images in subdirectiories e.g. <code>/uploads/2019/01/</code>.</p>
+
+<h3 id="addingimages">Adding images</h3>
+
+<p>To add an image to a post or page use the following codes:
+Local image from <code>/uploads/</code> directory:</p>
+
+<pre><code class="yaml language-yaml">{% include image.html img="girl.jpg" alt="Alt for image" caption="Girl on a rock" %}
+</code></pre>
+
+<p>External wide image with lightbox:</p>
+
+<pre><code class="yaml language-yaml">{% include image.html img="https://source.unsplash.com/TT-ROxWj9nA.jpg" lightbox="true" alt="Alt for image" caption="Image in lightbox" %}
+</code></pre>
+
+<h3 id="responsivevideos">Responsive Videos</h3>
+
+<p>Embed local videos:</p>
+
+<pre><code class="html language-html">&lt;video controls playsinline uk-video="automute: true"&gt;
+    &lt;source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" type="video/mp4"&gt;
+    &lt;source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.ogv" type="video/ogg"&gt;
+&lt;/video&gt;
+</code></pre>
+
+<p>Embed YouTube videos:</p>
+
+<pre><code class="html language-html">&lt;iframe src="http://www.youtube.com/embed/YE7VzlLtp-4?autoplay=0&amp;amp;showinfo=0&amp;amp;rel=0&amp;amp;modestbranding=1&amp;amp;playsinline=1" width="600" height="340" frameborder="0" allowfullscreen uk-responsive uk-video="automute: true"&gt;&lt;/iframe&gt;
+</code></pre>
+
+<p>To create a draft post, create the post file under the <code>_drafts</code> directory, and you can find more information in <a href="https://jekyllrb.com/docs/drafts/">Working with Drafts</a>.</p>
+
+<h2 id="homepage">Home Page</h2>
+
+<p>To create a home page, just create a <code>index.md</code> file inside the root directory. The following is a YAML Front Matter example for a page:</p>
+
+<pre><code class="yaml language-yaml">---
+layout: full
+---
+</code></pre>
+
+<p>Home page sections are created using includes that can be easily rearranged and modified, e.g.:</p>
+
+<pre><code>{% include section-ad.html image="welcome.png" alt="Buy Étoile Jekyll Theme" width="" url="https://themeforest.net/user/pressapps/portfolio" blank="true" %}
+
+{% include section-featured.html title="Featured Story" %}
+
+{% include section-spotlight.html title="Spotlight" %}
+
+{% include section-mailchimp.html title="Newsletter Signup" text="Sign up for our weekly newsletter through Mailchimp and stay up to date with what is happening in the city." button_text="Support Us" %}
+
+{% include section-latest.html title="Latest Articles" limit="4" more="More Articles" %}
+
+{% include section-ad.html title="Advertisement" image="https://via.placeholder.com/800x180/f4f4f4/fff.png?text=+" url="#" blank="true" %}
+
+{% include section-authors.html title="Our Contributors" %}
+
+{% include section-instagram.html title="Latest On Instagram" cols="4" count="4" gutter="true" %}
+
+{% include section-cta.html title="Want To Contribute?" text="We are looking for writers from all walks of life to contribute to out blog, if you have something to say get in touch." button_text="Contact Us" button_url="/contact/" blank="true" %}
+
+{% include section-author.html author="john" title="Hello, I am Jane! Welcome to my blog." %} 
+</code></pre>
+
+<h2 id="authors">Authors</h2>
+
+<p>To create an author, create a new post inside the <code>_authors</code> directory and add the following YAML Front Matter:</p>
+
+<pre><code>---
+title:          John Nolten
+username:       john
+image:          avatar_john.jpg
+bio:            Writer at WorkBox Publishing, parent, aminal lover and avid coffee drinker.
+email:          me@mysite.com
+website:        https://mysite.com
+facebook:       https://www.facebook.com/
+flickr:         https://www.flickr.com/
+dribbble:       https://dribbble.com/
+github:         https://github.com/
+reddit:         https://www.reddit.com/
+instagram:      https://www.instagram.com/
+linkedin:       https://www.linkedin.com/
+pinterest:      https://www.pinterest.com
+twitter:        https://twitter.com/
+vimeo:          https://vimeo.com/
+youtube:        https://www.youtube.com/
+---
+</code></pre>
+
+<p>Add post content and upload author <code>avatar_john.jpg</code> avatar to <code>uploads</code> folder.</p>
+
+<h2 id="categories">Categories</h2>
+
+<p>To create a category, create a new post inside the <code>_category</code> directory and add the following YAML Front Matter:</p>
+
+<pre><code>---
+tag: business
+permalink: "/category/business/"
+---
+</code></pre>
+
+<h2 id="customization">Customization</h2>
+
+<p>To modify the primary color, open <code>/assets/css/main.scss</code> and replace the <code>#de7a93</code> color value:</p>
+
+<pre><code class="scss language-scss">// Modify primary template color
+$global-primary-background: #de7a93;
+</code></pre>
+
+<p>To modify the fonts, open <code>/assets/css/main.scss</code> and modify the following values:</p>
+
+<pre><code class="scss language-scss">// Modify body font
+$global-font-family: 'Lora', serif; 
+// Modify article title font
+$aticle-title-font-family: 'ZCOOL XiaoWei', serif;
+</code></pre>
+
+<p>Edit the embedded Google fonts in <code>/_includes_/head-custom.html</code>.</p>
+
+<p>Further style customisation can be done in the following files:</p>
+
+<pre><code>/_sass/theme/mixins.scss
+/_sass/theme/variables.scss
+/assets/css/main.scss
+</code></pre>
+
+<h2 id="development">Development</h2>
+
+<p>Install <a href="https://getuikit.com/">UIkit</a> font end framework dependency via Npm:</p>
+
+<pre><code class="bash language-bash">npm install
+</code></pre>
+
+<p>Enable live browser reload with the following:</p>
+
+<pre><code class="bash language-bash">bundle exec jekyll s --livereload
+</code></pre>
+
+<h2 id="creditsandsources">Credits and Sources</h2>
+
+<ul>
+<li>Google analytics https://www.google.com/analytics/</li>
+
+<li>UIkit front end framework https://getuikit.com/</li>
+
+<li>Unsplash images https://unsplash.com/</li>
+
+<li>Jekyll CML https://jekyllrb.com/</li>
+</ul>
+
+<h2 id="support">Support</h2>
+
+<p>Customer support is provided through our Envato profile page <a href="https://themeforest.net/user/pressapps">contact form</a> for up to six months from the purchase date and is provided Monday to Friday during the business week. We aim to answer all support requests daily, most are handled within 48h.</p>
+</div>
+</body>
+
+</html>
