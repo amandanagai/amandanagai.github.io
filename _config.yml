@@ -1,62 +1,122 @@
-# Site
-name: "Mediumish"
-title: "Mediumish"
-description: "Jekyll Template for Blogging"
-meta_description: "Jekyll template, Medium styled, free for bloggers."
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
-baseurl: /mediumish-theme-jekyll
-google_analytics: 'UA-46278016-1'
-disqus: 'demowebsite'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
-include: ["_pages"]
-permalink: /:title/
+# Welcome to Plus!
+#
+# This config file affects your whole blog.
+# This file is *NOT* reloaded automatically when you use 'bundle exec jekyll serve'.
+# If you change this file, please restart the server process.
 
-# Authors
-authors:
-  sal:
-    name: Sal
-    display_name: Sal
-    gravatar: e56154546cf4be74e393c62d1ae9f9d4
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net
-    twitter: https://twitter.com/wowthemesnet
-    description: "Author of Mediumish, a Bootstrap Medium styled template available for WordPress, HTML, Ghost and Jekyll. You are currently previewing Jekyll template demo."
-  john:
-    name: John
-    display_name: John
-    gravatar: b1cc14991db7a456fcd761680bbc8f81
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net
-    twitter: https://twitter.com/wowthemesnet
-    description: "This is the author box. Write a short description of the author here. You are currently previewing Mediumish demo, a Jekyll template compatible with Github pages."
+# Site settings
+title:              Étoile
+description:        Magazine Jekyll theme for writers and bloggers.
+url:                # Site base hostname & protocol, e.g. http://example.com
+baseurl:            "" # Site subpath, e.g. /blog
+logo_image:
+  dark:             # Dark logo e.g logo-dark.svg upload to /uploads/ folder, used in header, mobile navigation and page sidebar About widget
+  light:            # Light logo e.g. logo-light.svg upload to /uploads/ folder, used in footer About widget
+permalink:          /:title/ # Permalink URLs structure, for permalink style options see: https://jekyllrb.com/docs/permalinks/
+date_format:        "%B %-d, %Y" # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+uploads:            /uploads/ # Path to post content assets directory i.e post images, pdfs etc
+paginate:           7 # Number of posts displayed on blog page
+paginate_path:      "/blog/:num/" # Blog path
+google_analytics:   # Google analytics code, get your code here https://www.google.com/analytics/
+disqus:
+  shortname:        # Disqus comments shortname, requires Disqus account https://disqus.com/
 
-# Plugins
-plugins: 
-  - jekyll-paginate
-  - jekyll-sitemap
+instagram_accesstoken: 9787042989.1677ed0.1dd0f134cfe84e1d88a05b9afbedec3c
+
+footer:             # Default footer image settings
+  copyright:        Made by a <a href="https://ivanchromjak.com/">human</a> somewhere on the planet earth.
+
+# navbar settings
+navbar_primary:
+  sticky:           true
+  social:           true
+  search:           true
+
+# Social share buttons
+social_share:
+  twitter:          true
+  facebook:         true
+  linkedin:         true
+  pinterest:        true
+  reddit:           true
+
+# Social networks
+social_networks:
+  email:          
+  website:        
+  facebook:         https://www.facebook.com/
+  flickr:         
+  dribbble:       
+  github:         
+  reddit:         
+  instagram:        https://www.instagram.com/
+  linkedin:       
+  pinterest:      
+  twitter:          https://twitter.com/
+  vimeo:          
+  youtube:          https://www.youtube.com/    
+
+# Strings
+strings:
+  author_by:        By
+
+# Build settings
+markdown:           kramdown
+highlighter:        rouge
+
+plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-archives
-    
-# Archives
-jekyll-archives:
-  enabled:
-    - categories
-  layout: archive
-  permalinks:
-    category: '/category/:name/'
-    
-# Pagination 
-paginate: 6
-paginate_path: /page:num/
-    
-# Other
-markdown: kramdown
+  - jekyll-gist
+  - jekyll-avatar
+  - jekyll-sitemap
 
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    block:
-      line_numbers: true
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - CHANGELOG
+  - LICENSE
+  - README
+  - /docs
+
+sass:
+  style:            compressed
+
+# collections:
+collections:
+  authors:
+    output: true
+  category:
+    output: true
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+      sidebar: left
+  # _authors
+  - scope:
+      path: ""
+      type: authors
+    values:
+      layout: author
+  # _category
+  - scope:
+      path: ""
+      type: category
+    values:
+      layout: category

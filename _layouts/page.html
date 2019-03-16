@@ -2,24 +2,44 @@
 layout: default
 ---
 
+{% assign sidebar = page.sidebar | default: 'full' %}
 
-<section>
-    <div class="section-title">
-        <h2><span>{{ page.title }}</span></h2>
+{% if sidebar == 'left' %}
+  <div class="uk-container uk-container-small uk-margin-large">
+    <div class="uk-flex" data-uk-grid>
+      <div class="uk-width-expand@m">
+{% elsif sidebar == 'right' %}
+  <div class="uk-container uk-container-small uk-margin-large">
+    <div data-uk-grid>
+      <div class="uk-width-expand@m">
+{% else %}
+  <div class="uk-container uk-margin-large uk-container-xsmall">
+{% endif %}
+
+  <article class="uk-article">
+
+    {% unless page.header %}
+      <h1 class="page-title uk-margin-medium-bottom">{{ page.title | escape }}</h1>
+    {% endunless %}
+
+    <div class="content-primary">
+        {{ content }}
     </div>
-    
-    <div class="article-post">
-    {{content}}
+
+  </article>
+
+{% if sidebar == 'left' %}
     </div>
-    
-    {% if page.comments == true %}
-    
-    <div id="comments" class="row mb-5">
-        <div class="col-md-8">              
-            {% include disqus.html %}                
-        </div>
+    <aside class="uk-width-1-3@m uk-flex-first@m">
+      {% include sidebar-page.html %}
+    </aside>
+  </div>
+{% elsif sidebar == 'right' %}
     </div>
-    
-    {% endif %}
-    
-</section>
+    <aside class="uk-width-1-3@m">
+      {% include sidebar-page.html %}
+    </aside>
+  </div>
+{% endif %}
+
+</div>
